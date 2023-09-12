@@ -20,6 +20,18 @@ class RomanNumeralsTest extends TestCase
         );
     }
 
+    /** @test */
+    public function it_cannot_generate_for_less_than_one()
+    {
+        $this->assertFalse(RomanNumerals::generate(0));
+    }
+
+    /** @test */
+    public function it_cannot_generate_for_more_than_3999()
+    {
+        $this->assertFalse(RomanNumerals::generate(4000));
+    }
+
     public static function checks()
     {
         return [
